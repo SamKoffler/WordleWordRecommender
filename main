@@ -84,6 +84,8 @@ for word in new_words:
         new_words2.append(word)
 
 
+
+
 # for word in new_words:
 #     temp_bank = check_bank
 #     possible = True
@@ -104,9 +106,33 @@ for word in new_words:
 #         new_words2.append(word)
 
 
+
 print("Your possible words are: ")
 for i in range(len(new_words2)):
     if i != len(new_words2)-1:
         print(f'{new_words2[i]},', end=" ")
     else:
         print(f'{new_words2[i]}')
+
+
+grey = input("Enter grey letters seperated by commas: ")
+grey_letters = grey.split(",")
+
+new_words3 = []
+
+for word in new_words2:
+    possible = True
+    for grey_letter in grey_letters:
+        if grey_letter in word:
+            possible = False
+
+    if possible:
+        new_words3.append(word)
+
+
+print("Your possible words are: ")
+for i in range(len(new_words3)):
+    if i != len(new_words3)-1:
+        print(f'{new_words3[i]},', end=" ")
+    else:
+        print(f'{new_words3[i]}')
