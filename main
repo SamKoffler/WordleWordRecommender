@@ -63,12 +63,11 @@ for i in range(5):
     if user_word[i]=="*":
         check_idxs.append(i)
 
+
 for i in range(5):
     if user_word2[i] != "*" and user_word2[i] != user_word[i]:
         check_bank.append(user_word2[i])
 
-# print("check bank:", check_bank)
-# print("check indexes:", check_idxs)
 
 
 for word in new_words:
@@ -82,8 +81,6 @@ for word in new_words:
             possible = False
     if possible:
         new_words2.append(word)
-
-
 
 
 
