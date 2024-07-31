@@ -82,7 +82,8 @@ for word in new_words:
     if possible:
         new_words2.append(word)
 
-
+#need to check not in yellow location
+#modify the input to location, letter
 
 print("Your possible words are: ")
 for i in range(len(new_words2)):
