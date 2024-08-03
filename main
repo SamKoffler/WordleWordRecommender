@@ -53,37 +53,94 @@ for i in range(len(new_words)):
     else:
         print(f'{new_words[i]}')
 
-user_word2 = input("Now enter your word with green and yellow letters or * if not found: ")
 
+user_word2 = input("Now enter yellow letters and position 1-5 like 'a3,t5,o1':")
+
+check_bank = user_word2.split(',')
+check_idxs = []
 new_words2 = []
 
-check_bank = []
-check_idxs = []
 for i in range(5):
     if user_word[i]=="*":
         check_idxs.append(i)
 
-
-for i in range(5):
-    if user_word2[i] != "*" and user_word2[i] != user_word[i]:
-        check_bank.append(user_word2[i])
-
-
-
 for word in new_words:
     possible = True
-    temp_bank = []
     temp_word = ""
-    for idx in check_idxs:
-        temp_bank.append(word[idx])
+    temp_dict = {}
+    for i in check_idxs:
+        temp_word += word[i]
+        temp_dict[i] = word[i]
+    if temp_word == "":
+        continue
+    #print("check bank:", check_bank)
+    #print("temp dict:", temp_dict)
     for i in check_bank:
-        if i not in temp_bank:
+        if i[0] not in temp_word:
             possible = False
+            break
+        #print(int(i[1]-1), i[0])
+        if temp_dict[int(i[1])-1] == i[0]:
+            possible = False
+            break
     if possible:
         new_words2.append(word)
 
-#need to check not in yellow location
-#modify the input to location, letter
+
+
+
+# user_word2 = input("Now enter your word with green and yellow letters or * if not found: ")
+#
+# new_words2 = []
+#
+# check_bank = []
+# check_idxs = []
+# for i in range(5):
+#     if user_word[i]=="*":
+#         check_idxs.append(i)
+#
+# for i in range(5):
+#     if user_word2[i] != "*" and user_word2[i] != user_word[i]:
+#         check_bank.append(user_word2[i])
+#
+# for word in new_words:
+#     possible = True
+#     temp_bank = []
+#     temp_word = ""
+#     for idx in check_idxs:
+#         temp_bank.append(word[idx])
+#     for i in check_bank:
+#         if i not in temp_bank:
+#             possible = False
+#     if possible:
+#         new_words2.append(word)
+
+
+
+
+# print("check bank:", check_bank)
+# print("check indexes:", check_idxs)
+
+# for word in new_words:
+#     temp_bank = check_bank
+#     possible = True
+#     temp_word = ""
+#     for i in range(5):
+#         if user_word2[i]!="*" and user_word2[i] != user_word[i]:
+#             temp_word+=user_word2[i]
+#     if temp_word == "":
+#         continue
+#     while temp_bank!=[]:
+#         if temp_bank[0] in temp_word:
+#             temp_bank.pop(0)
+#         else:
+#             possible = False
+#             break
+#
+#     if possible:
+#         new_words2.append(word)
+
+
 
 print("Your possible words are: ")
 for i in range(len(new_words2)):
