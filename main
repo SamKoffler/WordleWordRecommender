@@ -124,30 +124,6 @@ else:
 
 
 
-# print("check bank:", check_bank)
-# print("check indexes:", check_idxs)
-
-# for word in new_words:
-#     temp_bank = check_bank
-#     possible = True
-#     temp_word = ""
-#     for i in range(5):
-#         if user_word2[i]!="*" and user_word2[i] != user_word[i]:
-#             temp_word+=user_word2[i]
-#     if temp_word == "":
-#         continue
-#     while temp_bank!=[]:
-#         if temp_bank[0] in temp_word:
-#             temp_bank.pop(0)
-#         else:
-#             possible = False
-#             break
-#
-#     if possible:
-#         new_words2.append(word)
-
-
-
 print("Your possible words are: ")
 for i in range(len(new_words2)):
     if i != len(new_words2)-1:
