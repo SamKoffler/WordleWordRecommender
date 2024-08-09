@@ -124,3 +124,5 @@ for i in range(len(new_words3)):
         print(f'{new_words3[i]},', end=" ")
     else:
         print(f'{new_words3[i]}')
+
+#check for same spot error for green and yellow
